@@ -116,7 +116,7 @@ Here's a checklist of things I plan to add in the future:
 * removing harmful or toxic tweets
 
 ## Quote of the Day 
-## "Being popular on Twitter isn't about charm or wit. It's about being as inflammatory as possible" <br /><br /> - Shadow the Hedgehog
+### "Being popular on Twitter isn't about charm or wit. It's about being as inflammatory as possible" <br /><br /> - Shadow the Hedgehog
 
 
 
