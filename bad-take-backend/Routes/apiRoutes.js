@@ -3,6 +3,7 @@ const router = express.Router();
 const {getTweets, createTweet, getUserTweets, deleteTweet, searchTweets} = require('../Controllers/tweetsController')
 const {getInterests, addInterest, deleteInterest} = require('../Controllers/interestsController')
 const requireAuth = require('../Middleware/requireAuth')
+const { multer } = require('../googleCloud')
 
 router.use(requireAuth)
 
@@ -14,6 +15,6 @@ router.get('/tweets', getTweets);
 router.get('/tweets/search', searchTweets)
 router.get('/tweets/user', getUserTweets)
 router.delete('/tweets/:message', deleteTweet)
-router.post('/tweets', createTweet);
+router.post('/tweets', multer.single("file"), createTweet);
 
 module.exports = router;

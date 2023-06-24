@@ -61,21 +61,21 @@ export default function Feedpage() {
     },[interestsDispatch, tweetsDispatch, user, refreshCounter])
   return (
     <div>
-        <Typography variant='h5' component='div' textAlign='left' m={1} marginTop={7}>
+        <Typography variant='h4' component='div' textAlign='left' m={1} marginTop={7}>
             Interest Filters <IconButton onClick={onShowInterests}>{showInterests ? <KeyboardArrowUpIcon/> :<KeyboardArrowDownIcon/>}</IconButton>
         </Typography>
         {showInterests && (
             <>
-            {interests.length === 0 && <Typography variant='h5' component='div' textAlign='center' m={5}>It looks like you have no interests. You need to touch some grass.</Typography>}
+            {interests.length === 0 && <Typography variant='h5' fontWeight={'light'} component='div' textAlign='center' m={5}>It looks like you have no interests. You need to touch some grass.</Typography>}
             <Interests interests = {interests}/>
             </>
         )}
         <Stack spacing={3} marginTop={4} marginBottom={5}>
             <TweetForm/>
+            <Button onClick={onRefreshComponents} variant='outlined'> Refresh </Button>
             {isLoading && <Typography variant='h5' component='div' textAlign='center' m={5}>Loading...</Typography>}
              {tweets.length > 0 && 
                 <>
-                    <Button onClick={onRefreshComponents} variant='outlined'> Refresh </Button>
                     <Tweets tweets={tweets}/>
                 </>
             }

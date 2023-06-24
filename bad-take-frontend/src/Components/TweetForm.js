@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { Typography } from '@mui/material';
 import { useTweetsContext } from '../Hooks/useTweetsContext';
 import { useAuthContext } from '../Hooks/useAuthContext';
+import { MuiFileInput } from 'mui-file-input'
 
 
 export default function TweetForm() {
@@ -16,6 +17,7 @@ export default function TweetForm() {
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [file,setFile] = useState('');
 
     const handleSubmit = async (event) => {
         if(!user){
@@ -25,12 +27,13 @@ export default function TweetForm() {
         event.preventDefault();
         setError(null)
         setIsLoading(true);
-        const tweet = {message}
+        const formData = new FormData();
+        formData.append('message', message);
+        formData.append('file', file);
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/tweets`, {
             method: 'POST',
-            body: JSON.stringify(tweet),
+            body: formData,
             headers: {
-              'Content-Type': 'application/json',
               'Authorization':`Bearer ${user.token}`,
           }
         })
@@ -48,13 +51,15 @@ export default function TweetForm() {
             dispatch({type: 'CREATE_TWEET', payload: json})
           }
         }
+    const handleFileChange = (newFile) => {
+      setFile(newFile)
+    }
 
   return (
     <div>
         <Box component="form" noValidate onSubmit={handleSubmit}>
             <Grid container spacing={2}>
-              <Grid item xs={12}>
-              </Grid>
+              
               <Grid item xs={12}>
                 <TextField
                 value={message}
@@ -68,13 +73,16 @@ export default function TweetForm() {
                   autoComplete="new-tweet"
                 />
               </Grid>
+              <Grid item xs={12}>
+                <MuiFileInput fullWidth value={file} onChange={handleFileChange} />
+              </Grid>
             </Grid>
             <Button
               disabled={isLoading}
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3 }}
             >
               Post
             </Button>
