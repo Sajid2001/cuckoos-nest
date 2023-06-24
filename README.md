@@ -21,23 +21,23 @@ Like most social media platforms, Twitter has a sophisticated recommendation sys
 
 ### Registration
 
-https://github.com/Sajid2001/cuckoos-nest/assets/60523377/dcd80156-e6ae-4cbe-8d4b-89d02b013963
+https://github.com/Sajid2001/cuckoos-nest/assets/60523377/4b1e9181-96a7-4221-9a67-203804efa402
 
 ### Making Posts
 
-https://github.com/Sajid2001/cuckoos-nest/assets/60523377/a260fcd2-4ac0-4dfd-a7f5-7d4339ca564d
+https://github.com/Sajid2001/cuckoos-nest/assets/60523377/c95eeca4-eb23-4bb9-a179-bf8bea5b6116
 
-### HuggingFace Tweet Filtering
+### Tweet Filtering, powered by HuggingFace
 
-https://github.com/Sajid2001/cuckoos-nest/assets/60523377/9f33ee12-c5ad-43bd-8b3b-fccabc1c742e
+https://github.com/Sajid2001/cuckoos-nest/assets/60523377/394e9084-5a20-44e1-8c9b-51a2fa42cf2e
 
 ### Profile Page
 
-https://github.com/Sajid2001/cuckoos-nest/assets/60523377/a18d1780-fb5a-4ada-96d8-d9f10dd33458
+https://github.com/Sajid2001/cuckoos-nest/assets/60523377/dfff29f7-1713-4251-81a9-368f848f2b95
 
 ### Tweet Search
 
-https://github.com/Sajid2001/cuckoos-nest/assets/60523377/68e6472c-ab4b-4393-97ce-1cb0b5877508
+https://github.com/Sajid2001/cuckoos-nest/assets/60523377/102a4bf3-813a-4bd7-a48d-a557ea0fdd9f
 
 ## How to tweak this project for yourself
 1. Download the project and add the environment variables to both the backend and frontend folders (```.env``` in the back and ```.env.local``` in the front).
