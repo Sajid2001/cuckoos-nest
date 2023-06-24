@@ -27,7 +27,7 @@ https://github.com/Sajid2001/cuckoos-nest/assets/60523377/4b1e9181-96a7-4221-9a6
 
 https://github.com/Sajid2001/cuckoos-nest/assets/60523377/c95eeca4-eb23-4bb9-a179-bf8bea5b6116
 
-### Tweet Filtering, powered by HuggingFace
+### Tweet Filtering - powered by HuggingFace
 
 https://github.com/Sajid2001/cuckoos-nest/assets/60523377/394e9084-5a20-44e1-8c9b-51a2fa42cf2e
 
@@ -35,7 +35,7 @@ https://github.com/Sajid2001/cuckoos-nest/assets/60523377/394e9084-5a20-44e1-8c9
 
 https://github.com/Sajid2001/cuckoos-nest/assets/60523377/dfff29f7-1713-4251-81a9-368f848f2b95
 
-### Tweet Search
+### Tweet Search - powered by HuggingFace
 
 https://github.com/Sajid2001/cuckoos-nest/assets/60523377/102a4bf3-813a-4bd7-a48d-a557ea0fdd9f
 
