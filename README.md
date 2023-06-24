@@ -125,5 +125,7 @@ Here's a checklist of things I plan to add in the future:
 ## Quote of the Day 
 ### "Being popular on Twitter isn't about charm or wit. It's about being as inflammatory as possible" <br /><br /> - Shadow the Hedgehog
 
+![Screenshot (511)](https://github.com/Sajid2001/cuckoos-nest/assets/60523377/81eb0b4b-e9a5-4416-b413-01e3308f5fcb)
+
 
 
