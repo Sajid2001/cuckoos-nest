@@ -119,7 +119,7 @@ The inspiration for the name came from when I was discussing this project with a
 Here's a checklist of things I plan to add in the future: 
 * replies to tweets
 * a profile page
-* image uploading
+* hashtag system
 * removing harmful or toxic tweets
 
 ## Quote of the Day 
