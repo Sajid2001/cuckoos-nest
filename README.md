@@ -5,13 +5,16 @@ Like most social media platforms, Twitter has a sophisticated recommendation sys
 
 * Allows users to post their interests so the site can filter tweets based on those interests
 * Allows users to keyword search any tweet in the world, even ones that are not relevant to them
+* Allows users to upload images, powered by Google Cloud
 * Leverages the HuggingFace API and its facebook/bart-large-cnn model
 
 ## Technologies used
 * React
 * NodeJS / Express
 * MySQL
+* Google Cloud Storage
 * JWT
+* MaterialUI
 * HuggingFace API
 
 ## How to Use
@@ -64,16 +67,17 @@ CREATE TABLE UserInterests (
 );
 
 CREATE TABLE Tweets (
-	message VARCHAR(255) NOT NULL PRIMARY KEY,
+    message VARCHAR(255) NOT NULL PRIMARY KEY,
+    image_url VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE UserTweets(
-	user_id INT NOT NULL,
-	message VARCHAR(255) NOT NULL,
+    user_id INT NOT NULL,
+    message VARCHAR(255) NOT NULL,
     PRIMARY KEY (user_id, message),
-	FOREIGN KEY (user_id) REFERENCES Users(user_id),
-	FOREIGN KEY (message) REFERENCES Tweets (message)
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (message) REFERENCES Tweets (message)
 );
 ```
 
@@ -87,6 +91,9 @@ Backend
 * ```JWT_SECRET_KEY``` = Go to an online password generator and slot your string into this variable
 * ```HUGGING_FACE_TOKEN``` = Go to HuggingFace's website, sign up for an account, and get your API key there.
 * ```PORT``` = Your port number of choice (Make sure it is not 3000 since React runs on that port)
+* ```GOOGLE_CLOUD_PROJECT_ID``` = Your Google Cloud Project ID
+* ```GOOGLE_CLOUD_KEY_FILENAME``` = Your Google Cloud ```keys.json``` File
+* ```GOOGLE_CLOUD_STORAGE_BUCKET``` = Your Google Cloud Storage Bucket
 
 Frontend
 * ```REACT_APP_API_URL``` = Your Server URL, whether deployed or on localhost
