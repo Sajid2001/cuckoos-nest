@@ -29,7 +29,9 @@ export default function TweetForm() {
         setIsLoading(true);
         const formData = new FormData();
         formData.append('message', message);
-        formData.append('file', file);
+        if (file) {
+          formData.append('file', file);
+        }
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/tweets`, {
             method: 'POST',
             body: formData,
@@ -38,7 +40,15 @@ export default function TweetForm() {
           }
         })
           const json = await response.json()
-      
+
+          const newTweet = {
+            author:user.email,
+            id: json.tweetId,
+            message: message,
+            created_at: new Date().toISOString(),
+            image_url: file ? URL.createObjectURL(file) : null,
+          };
+    
           if (!response.ok) {
             setError(json.error)
             setIsLoading(false);
@@ -48,7 +58,7 @@ export default function TweetForm() {
             setError(null)
             setIsLoading(false);
             console.log('new tweet added', json)
-            dispatch({type: 'CREATE_TWEET', payload: json})
+            dispatch({type: 'CREATE_TWEET', payload: newTweet})
           }
         }
     const handleFileChange = (newFile) => {

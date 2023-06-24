@@ -1,4 +1,3 @@
-import React from 'react'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { CardMedia } from '@mui/material';
@@ -14,6 +13,7 @@ export default function TweetCard({tweet}) {
   const {user} = useAuthContext();
   const {dispatch} = useTweetsContext();
   const {dispatch:ownTweetsDispatch} = useOwnTweetsContext();
+
   const handleDelete = async() => {
     if(!user){
       return
@@ -55,6 +55,7 @@ export default function TweetCard({tweet}) {
                      sx={{borderRadius:5, marginBottom:2}}
                      image={tweet.image_url}
                      alt="Nothing loaded"
+                     loading="eager"
                    />
                   }
                 <Typography textAlign={'right'} variant="body2" component="div" padding={1}>

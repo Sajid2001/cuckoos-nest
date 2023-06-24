@@ -24,6 +24,7 @@ async function uploadFileToCloudStorage(file) {
       const filename = `${file.originalname}`;
       const blob = bucket.file(file.originalname);
       const blobStream = blob.createWriteStream();
+      
 
       blobStream.on("finish", () => {
         console.log("Success");

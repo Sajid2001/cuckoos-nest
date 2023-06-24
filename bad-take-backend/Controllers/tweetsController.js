@@ -42,7 +42,7 @@ const getTweets = async (req, res) => {
 
       const filteredTweets = tweets.filter((tweet, index) => {
         const maxScore = Math.max(...filter[index].scores);
-        return maxScore >= 0.75;
+        return maxScore >= 0.80;
       });
       
       res.send(filteredTweets);
